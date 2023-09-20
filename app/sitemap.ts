@@ -1,9 +1,9 @@
-import { allPosts } from 'contentlayer/generated';
+import { allBlogs } from 'contentlayer/generated';
 
 export default async function sitemap() {
-    const blogs = allPosts.map((post) => ({
-        url: `https://font.codes/blog/${post.slug}`,
-        lastModified: post.date,
+    const blogs = allBlogs.map((blog) => ({
+        url: `https://font.codes/blog/${blog.slug}`,
+        lastModified: blog.date,
     }));
 
     const routes = ['', '/blog', '/photos'].map(
