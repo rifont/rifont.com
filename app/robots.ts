@@ -1,3 +1,6 @@
+import { siteConfig } from "@/config/site";
+
+
 export default function robots() {
     return {
         rules: [
@@ -5,7 +8,7 @@ export default function robots() {
                 userAgent: '*',
             },
         ],
-        sitemap: 'https://font.codes/sitemap.xml',
-        host: 'https://font.codes',
+        sitemap: `${siteConfig.url}/sitemap.xml`,
+        host: siteConfig.url,
     };
 }

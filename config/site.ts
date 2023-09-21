@@ -1,14 +1,14 @@
 export const siteConfig = {
     name: "Richard Fontein's blog",
-    url: "https://font.codes",
-    ogImage: "https://font.codes/og.jpg",
+    url: "https://rifont.com",
+    ogImage: "https://rifont.com/og.jpg",
     creator: "Richard Fontein",
-    handle: "@fontcodes",
+    handle: "@rifont",
     description:
         "Personal blog for Richard Fontein. I write about web development, developer experience, and the future.",
     links: {
         twitter: "https://twitter.com/fontcodes",
-        github: "https://github.com/fontcodes/font.codes",
+        github: "https://github.com/rifont/rifont.com",
     },
 }
 
