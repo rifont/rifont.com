@@ -10,29 +10,29 @@ interface PostProps {
   }
 }
 
-async function getPostFromParams(params: PostProps["params"]) {
+async function getBlogFromParams(params: PostProps["params"]) {
   const slug = params?.slug?.join("/")
-  const post = allBlogs.find((blog) => blog.slugAsParams === slug)
+  const blog = allBlogs.find((blog) => blog.slugAsParams === slug)
 
-  if (!post) {
+  if (!blog) {
     null
   }
 
-  return post
+  return blog
 }
 
 export async function generateMetadata({
   params,
 }: PostProps): Promise<Metadata> {
-  const post = await getPostFromParams(params)
+  const blog = await getBlogFromParams(params)
 
-  if (!post) {
+  if (!blog) {
     return {}
   }
 
   return {
-    title: post.title,
-    description: post.description,
+    title: blog.title,
+    description: blog.description,
   }
 }
 
@@ -42,23 +42,23 @@ export async function generateStaticParams(): Promise<PostProps["params"][]> {
   }))
 }
 
-export default async function PostPage({ params }: PostProps) {
-  const post = await getPostFromParams(params)
+export default async function BlogPage({ params }: PostProps) {
+  const blog = await getBlogFromParams(params)
 
-  if (!post) {
+  if (!blog) {
     notFound()
   }
 
   return (
     <article className="py-6 prose dark:prose-invert">
-      <h1 className="mb-2">{post.title}</h1>
-      {post.description && (
+      <h1 className="mb-2">{blog.title}</h1>
+      {blog.description && (
         <p className="text-xl mt-0 text-slate-700 dark:text-slate-200">
-          {post.description}
+          {blog.description}
         </p>
       )}
       <hr className="my-4" />
-      <Mdx code={post.body.code} />
+      <Mdx code={blog.body.code} />
     </article>
   )
 }
