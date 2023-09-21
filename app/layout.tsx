@@ -58,6 +58,12 @@ interface RootLayoutProps {
   children: React.ReactNode
 }
 
+const navItems = [
+  { name: "Home", href: "/" },
+  { name: "Blog", href: "/blog" },
+  { name: "Photos", href: "/photos" },
+]
+
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
@@ -68,10 +74,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <div className="max-w-2xl mx-auto py-10 px-4">
             <header>
               <div className="flex items-center justify-between">
-                <ModeToggle />
-                <nav className="ml-auto text-sm font-medium space-x-6">
-                  <Link href="/">Home</Link>
-                  <Link href="/about">About</Link>
+                <Link href="/">
+                  <p className="text-2xl font-bold font-mono rounded-md py-1 px-2 hover:bg-slate-200 dark:hover:bg-slate-800">{"<font>"}</p>
+                </Link>
+                <nav className="flex items-center ml-auto text-sm font-medium space-x-1">
+                  <ModeToggle />
+                  {navItems.map((item) => (
+                    <Link key={item.href} href={item.href} className="rounded-md py-1 px-2 hover:bg-slate-200 dark:hover:bg-slate-800">
+                      {item.name}
+                    </Link>
+                  ))}
                 </nav>
               </div>
             </header>
