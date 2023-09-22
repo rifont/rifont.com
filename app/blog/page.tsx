@@ -31,7 +31,7 @@ export default function Home() {
 
   return (
     <div className="w-full text-xs sm:text-sm font-mono mt-4 -mx-1">
-      <div className="text-xs flex p-1 text-gray-500">
+      <div className="text-xs flex h-9 items-center p-1 text-gray-500">
         <button className={`w-20 text-left ${sort.key === "date" && sort.direction !== "desc"
           ? "text-gray-700 dark:text-gray-400" : ""}`}
           onClick={sortDate}
