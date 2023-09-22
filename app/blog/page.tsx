@@ -30,18 +30,16 @@ export default function Home() {
   }
 
   return (
-    <div className="text-xs sm:text-base font-mono mt-4 prose dark:prose-invert">
-      <div className="text-xs flex justify-between p-1 text-gray-500">
-        <button className={`w-32 text-left ${sort.key === "date" && sort.direction !== "desc"
-          ? "text-gray-700 dark:text-gray-400"
-          : ""
-          }`}
+    <div className="w-full text-xs sm:text-sm font-mono mt-4">
+      <div className="text-xs flex p-1 text-gray-500">
+        <button className={`w-20 text-left ${sort.key === "date" && sort.direction !== "desc"
+          ? "text-gray-700 dark:text-gray-400" : ""}`}
           onClick={sortDate}
         >
           date
           {sort.key === "date" && sort.direction === "asc" && "↑"}
         </button>
-        <span className="mr-auto">title</span>
+        <span className="grow ml-2 sm:ml-4">title</span>
         <button
           className={`w-16 text-right ${sort.key === "views" ? "text-gray-700 dark:text-gray-400" : ""}`}
           onClick={sortViews}
@@ -52,13 +50,13 @@ export default function Home() {
       </div>
       {sortedBlogs.map((blog) => (
         <Link href={blog.slug} key={blog._id} className="no-underline">
-          <article className="hover:bg-slate-200 dark:hover:bg-slate-800 rounded-md p-1">
-            <div className="flex justify-between">
-              <span className="text-gray-500 w-32">{new Date(blog.date).toLocaleString("en", { month: 'short', day: 'numeric', year: '2-digit' })}</span>
-              <span className="mr-auto text-left">{blog.title}</span>
-              <span className="text-xs text-gray-500 w-16 text-right">{blog.views.toLocaleString()}</span>
-            </div>
-            {blog.description && <p className="hidden sm:block text-xs my-1 ml-32 mr-16">{blog.description}</p>}
+          <article className="flex grow hover:bg-slate-200 dark:hover:bg-slate-800 rounded-md p-1">
+            <span className="text-gray-500 self-start shrink-0 w-20">{new Date(blog.date).toLocaleString("en", { month: 'short', day: 'numeric', year: '2-digit' })}</span>
+            <span className="flex flex-col grow ml-2 sm:ml-4">
+              <span>{blog.title}</span>
+              <p className="hidden sm:block text-xs my-1">{blog.description}</p>
+            </span>
+            <span className="text-xs text-gray-500 w-16 text-right">{blog.views.toLocaleString("en")}</span>
           </article>
         </Link>
       ))}

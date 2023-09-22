@@ -74,9 +74,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="max-w-2xl mx-auto py-6 px-4">
             <header>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between -mx-1">
                 <Link href="/">
-                  <p className="text-2xl font-bold font-mono rounded-md py-1 px-2 -ml-2 hover:bg-slate-200 dark:hover:bg-slate-800">{"<font>"}</p>
+                  <p className="text-2xl font-bold font-mono rounded-md py-1 px-2 hover:bg-slate-200 dark:hover:bg-slate-800">
+                    {"<font>"}
+                  </p>
                 </Link>
                 <nav className="flex items-center ml-auto text-sm font-medium space-x-1">
                   <ModeToggle />
