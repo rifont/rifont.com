@@ -39,6 +39,7 @@ export const Blog = defineDocumentType(() => ({
     },
     description: {
       type: "string",
+      required: true,
     },
     date: {
       type: "date",
