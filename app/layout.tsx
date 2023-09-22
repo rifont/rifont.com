@@ -60,6 +60,7 @@ interface RootLayoutProps {
 
 const navItems = [
   { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
   { name: "Blog", href: "/blog" },
   { name: "Photos", href: "/photos" },
 ]
@@ -68,14 +69,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body
-        className={`antialiased min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 ${inter.className}`}
+        className={`antialiased min-h-screen bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-50 ${inter.className}`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="max-w-2xl mx-auto py-10 px-4">
+          <div className="max-w-2xl mx-auto py-6 px-4">
             <header>
               <div className="flex items-center justify-between">
                 <Link href="/">
-                  <p className="text-2xl font-bold font-mono rounded-md py-1 px-2 hover:bg-slate-200 dark:hover:bg-slate-800">{"<font>"}</p>
+                  <p className="text-2xl font-bold font-mono rounded-md py-1 px-2 -ml-2 hover:bg-slate-200 dark:hover:bg-slate-800">{"<font>"}</p>
                 </Link>
                 <nav className="flex items-center ml-auto text-sm font-medium space-x-1">
                   <ModeToggle />
@@ -87,7 +88,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 </nav>
               </div>
             </header>
-            <main>{children}</main>
+            <main className="flex min-h-screen w-full">{children}</main>
+            <footer className="flex w-full text-center font-mono text-xs text-slate-700 dark:text-slate-200">
+              <p className="grow text-left">
+                {siteConfig.creator} (<Link className="underline underline-offset-4" target="_blank" href={siteConfig.links.twitter}>{siteConfig.handle}</Link>)
+              </p>
+              <p>
+                <Link className="underline" target="_blank" href={siteConfig.links.github}>Source</Link>
+              </p>
+            </footer>
           </div>
           <Analytics />
         </ThemeProvider>
