@@ -37,20 +37,20 @@ export default function Home() {
           onClick={sortDate}
         >
           date
-          {sort.key === "date" && sort.direction === "asc" && "↑"}
+          {sort.key === "date" && sort.direction === "asc" && " ↑"}
         </button>
         <span className="grow ml-2 sm:ml-4">title</span>
         <button
           className={`w-16 text-right ${sort.key === "views" ? "text-gray-700 dark:text-gray-400" : ""}`}
           onClick={sortViews}
         >
+          {sort.key === "views" ? (sort.direction === "asc" ? "↑ " : "↓ ") : ""}
           views
-          {sort.key === "views" ? (sort.direction === "asc" ? "↑" : "↓") : ""}
         </button>
       </div>
       {sortedBlogs.map((blog) => (
         <Link href={blog.slug} key={blog._id} className="no-underline">
-          <article className="flex grow hover:bg-slate-200 dark:hover:bg-slate-800 rounded-md p-1">
+          <article className="flex grow hover:bg-slate-200 dark:hover:bg-slate-800 rounded-md px-1 py-3 sm:py-1">
             <span className="text-gray-500 self-start shrink-0 w-20">{new Date(blog.date).toLocaleString("en", { month: 'short', day: 'numeric', year: '2-digit' })}</span>
             <span className="flex flex-col grow ml-2 sm:ml-4">
               <span>{blog.title}</span>
