@@ -87,7 +87,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 </nav>
               </div>
             </header>
-            <main className="flex min-h-screen w-full">{children}</main>
+            <main className="flex min-h-screen w-full my-4">{children}</main>
             <footer className="flex w-full text-center font-mono text-xs text-slate-700 dark:text-slate-200">
               <p className="grow text-left">
                 {siteConfig.creator} (<Link className="underline underline-offset-4" target="_blank" href={siteConfig.links.twitter}>{siteConfig.handle}</Link>)
