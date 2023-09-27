@@ -26,6 +26,13 @@ This project uses Vercel for deployment. Pushing to `main` triggers a new deploy
 
 ### Tools
 
+* Next.js
+* Contentlayer
+* Tailwind
+* Vercel Analytics
+* Typescript
+* Eslint
+
 ### Blog Posts
 
 All blog posts are written in [MDX](https://mdxjs.com/) and located in content/blog
