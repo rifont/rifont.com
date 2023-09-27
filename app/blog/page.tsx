@@ -28,6 +28,10 @@ export default function Home() {
       direction: sort.key !== "views" ? "desc" : sort.direction === "asc" ? "desc" : "asc",
     }));
   }
+  
+  return <div>
+    Coming soon...
+  </div>
 
   return (
     <div className="w-full text-xs sm:text-sm font-mono -mx-1">
