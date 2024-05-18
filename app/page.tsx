@@ -22,12 +22,12 @@ export default async function Home() {
       <h3>Hi, I'm Richard 👋</h3>
 
       <p>
-        {`I'm a software engineer, currently working at `}
+        {`I'm a Product Engineer, currently working at `}
         <Badge href="https://novu.co">
           <Novu className="w-4 h-4 mr-1" />
           Novu
         </Badge>
-        {`, where I'm building a open-source infrastructure for product notifications. We make omnichannel product communication easy. Star us on `}
+        {`, where I'm building the Code-First Infrastructure for Product Notifications. We make omnichannel product communication easy. Star us on `}
         <Badge href="https://github.com/novuhq/novu">
           <Github className="w-4 h-4 mr-1" />
           {`Github ${Math.floor(novuStars / 1000)}k`}
