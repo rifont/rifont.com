@@ -27,7 +27,7 @@ export default async function Home() {
           <Novu className="w-4 h-4 mr-1" />
           Novu
         </Badge>
-        {`, where I'm building the Code-First Workflows Infrastructure for Notifications. _We connect people to the digital world._ Star us on `}
+        {`, where I'm building the Code-First Workflows Infrastructure for Notifications. *We connect people to the digital world.* Star us on `}
         <Badge href="https://github.com/novuhq/novu">
           <Github className="w-4 h-4 mr-1" />
           {`Github ${Math.floor(novuStars / 1000)}k`}
