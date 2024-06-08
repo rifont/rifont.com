@@ -74,7 +74,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               <div className="flex items-center justify-between -mx-2">
                 <Link href="/">
                   <p className="text-2xl font-bold font-mono rounded-md py-1 px-2 hover:bg-slate-200 dark:hover:bg-slate-800">
-                    {"<font>"}
+                    {"<rifont>"}
                   </p>
                 </Link>
                 <nav className="flex items-center ml-auto text-sm font-medium space-x-1">
