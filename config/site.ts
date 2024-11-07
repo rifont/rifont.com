@@ -7,7 +7,7 @@ export const siteConfig = {
     description:
         "Personal blog for Richard Fontein. I write about web development, developer experience, and the future.",
     links: {
-        twitter: "https://twitter.com/fontcodes",
+        twitter: "https://twitter.com/rifonty",
         github: "https://github.com/rifont/rifont.com",
     },
 }
